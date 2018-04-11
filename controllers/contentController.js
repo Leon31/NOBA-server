@@ -1,20 +1,27 @@
+const collection = require('../db');
 
 exports.getAll = async (ctx) => {
-  ctx.response.body = await 'getAll working';
+  ctx.response.body = await collection.collection.find({});
   ctx.response.status = 200;
 };
 
 exports.postOne = async (ctx) => {
-  ctx.response.body = await 'postOne working';
+  const newPost = {
+    job: ctx.request.body.job,
+    salary: ctx.request.body.salary,
+  };
+  collection.collection.insert(newPost);
   ctx.response.status = 200;
 };
 
 exports.editOne = async (ctx) => {
-  ctx.response.body = await 'editOne working';
+  ctx.response.body = await collection.collection.update(
+    { job: ctx.request.body.job },
+    { $set: { salary: ctx.request.body.newsalary } });
   ctx.response.status = 200;
 };
 
 exports.deleteOne = async (ctx) => {
-  ctx.response.body = await 'deleteOne working';
+  collection.collection.remove({ job: ctx.request.body.job });
   ctx.response.status = 200;
 };
