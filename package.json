@@ -1,0 +1,25 @@
+{
+  "name": "noba-server",
+  "version": "1.0.0",
+  "description": "server for noba project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leon31/NOBA-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leon31/NOBA-server/issues"
+  },
+  "homepage": "https://github.com/Leon31/NOBA-server#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0"
+  }
+}
