@@ -13,4 +13,6 @@ app
 .use(bodyParser())
 
 .use(router.routes())
-.listen(process.env.PORT || 3001);
+.listen(process.env.PORT || 3001, () => console.log(`server running at ${process.env.PORT}`));
+
+
