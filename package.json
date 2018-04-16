@@ -17,10 +17,14 @@
   },
   "homepage": "https://github.com/Leon31/NOBA-server#readme",
   "dependencies": {
+    "base64-img": "^1.0.4",
     "dotenv": "^5.0.1",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-cors": "0.0.16",
+    "koa-multer": "^1.0.2",
     "koa-router": "^7.4.0",
-    "monk": "^6.0.5"
+    "monk": "^6.0.5",
+    "superagent": "^3.8.2"
   }
 }
