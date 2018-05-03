@@ -1,52 +1,25 @@
-const collection = require('../db');
+const Collection = require('../db');
 
-
-
-
-exports.getAll = async (ctx) => {
-  const dbdata = await collection.collection.find({});
-    ctx.response.body = dbdata;
-
-  // ctx.response.body = dbdata[0].data;
-  // ctx.response.set('content-type', dbdata[0].contentType);
- console.log(dbdata);
-
+module.exports.getAll = async (ctx) => {
+  const dbdata = await Collection.find({});
+  ctx.response.body = dbdata;
   ctx.response.status = 200;
 };
 
-exports.getTest = async (ctx) => {
-  console.log(ctx.request.body.event.collection);
+module.exports.postOne = async (ctx) => {
+  const artwork = ctx.request.body.artwork;
+  Collection.insert(artwork);
   ctx.response.status = 200;
 };
 
-exports.postOne = async (ctx) => {
-
-  // console.log('file ', ctx.request.files);
-  // console.log('body ', ctx.request.body);
-  ctx.status = 200;
-
-
-  // const newPost = {
-  //   job: ctx.request.body.job,
-  //   salary: ctx.request.body.salary,
-  // };
-  // collection.collection.insert(newPost);
-  // ctx.response.status = 200;
-};
-
-exports.editOne = async (ctx) => {
+module.exports.editOne = async (ctx) => {
   ctx.response.body = await collection.collection.update(
     { job: ctx.request.body.job },
     { $set: { salary: ctx.request.body.newsalary } });
   ctx.response.status = 200;
 };
 
-exports.deleteOne = async (ctx) => {
-  collection.collection.remove({ job: ctx.request.body.job });
+module.exports.deleteOne = async (ctx) => {
+  Collection.remove({ _id: ctx.request.body._id });
   ctx.response.status = 200;
 };
-
-exports.upLoad = async (ctx) => {
-  upload.single('avatar')
-  console.log(ctx.request.file);
-}

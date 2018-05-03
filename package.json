@@ -25,6 +25,7 @@
     "koa-multer": "^1.0.2",
     "koa-router": "^7.4.0",
     "monk": "^6.0.5",
+    "nconf": "^0.10.0",
     "superagent": "^3.8.2"
   }
 }
