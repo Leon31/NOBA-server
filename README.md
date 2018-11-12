@@ -13,7 +13,7 @@
 
 
 
-##Extra Credit
+## Extra Credit
 
 * Authenticated Routes.
 * User collection.
