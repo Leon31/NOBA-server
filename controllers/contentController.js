@@ -1,8 +1,10 @@
 const Collection = require('../db');
 
 module.exports.getAll = async (ctx) => {
-  const dbdata = await Collection.find({});
-  ctx.response.body = dbdata;
+  const dbdata = await Collection.find();  
+  ctx.response.body = dbdata.sort(function (a, b) {
+      return ('' + a._id).localeCompare(b._id);
+    });
   ctx.response.status = 200;
 };
 

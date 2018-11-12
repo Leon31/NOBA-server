@@ -11,4 +11,4 @@ app
 .use(cors())
 .use(bodyParser())
 .use(router.routes())
-.listen(process.env.PORT || 3002, () => console.log(`server running at ${process.env.PORT}`));
+.listen(process.env.PORT || 3002, () => console.log(`server running at ${process.env.PORT || 3002}`));
